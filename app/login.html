@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Anonymous Builders: Login Form</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <link href="assets/css/login.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="loginbox">
+  
+    <h1>Anonymous Builders <br/> Login User</h1>
+    <form id="loginform">
+      <label ref="roleCheck">Office Staff:</label>
+      <input type="checkbox" id="roleCheck">
+      <br>
+      <label ref="username">Username:</label>
+      <input type="text" id="username" placeholder="Enter Username" maxlength="15">
+      <label ref="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter Current Password" maxlength="15">
+      <p>NOTE: First time users must provide a new password in addition <br/> to the temporary password provided by your administrator.</p>
+      <br>
+      <label ref="newpassword">New Password:</label>
+      <input type="password" id="newpassword" placeholder="Enter New Password" maxlength="15">
+      <label ref="confirmnewpassword"> Confirm New Password:</label>
+      <input type="password" id="confirmnewpassword" placeholder="Repeat New Password" maxlength="15">
+      <input type="button" name="" value="Login" onclick="ABApp.login()"><br>
+    
+    
+    </form>
+  </div>
+  
+  <script src="scripts/amazon-cognito-identity.min.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+  <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+  <script src="scripts/apiGateway-js-sdk/apigClient.js"></script>
+  <script src="scripts/config.js"></script>
+  <script src="scripts/site.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        ABApp.checkLogin(true, false);
+    });
+  </script>
+</body>
+
+</html>

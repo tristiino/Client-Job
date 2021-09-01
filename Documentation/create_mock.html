@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mock_styles.css">
+    <title>New Customer</title>
+</head>
+<body>
+    <h1>Create a New Customer Record</h1>
+
+    <form action="">
+
+        <fieldset>
+            <legend>Customer Name</legend>
+            <label for="firstName">First:</label>
+            <input type="text" id="firstName">
+
+            <label for="lastName">Last:</label>
+            <input type="text" id="lastName">
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Contact Info</legend>
+            <label for="custPhone">Phone:</label>
+            <input type="text" id="custPhone">
+
+            <label for="custEmail">Email:</label>
+            <input type="text" id="custEmail">
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Customer Address</legend>
+            <label for="custStreet">Street:</label>
+            <input type="text" id="custStreet">
+            <label for="custApt">Apt:</label>
+            <input type="text" id="custApt">
+            <br><br>
+            <label for="custState">State:</label>
+            <select name="custState" id="custState">
+                <option value="chooseCustState" selected>Choose state</option>
+            </select>
+            <label for="custZIP">ZIP:</label>
+            <input type="text" id="custZIP">
+
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Job Site Address</legend>
+            <label for="sameAddress">Check if same as above</label>
+            <input type="checkbox" id="sameAddress">
+            <br><br>
+            <label for="jobStreet">Street:</label>
+            <input type="text" id="jobStreet">
+            <label for="jobApt">Apt:</label>
+            <input type="text" id="jobApt">
+            <br><br>
+            <label for="jobState">State:</label>
+            <select name="jobState" id="jobState">
+                <option value="jobCustState" selected>Choose state</option>
+            </select>
+            <label for="jobZIP">ZIP:</label>
+            <input type="text" id="jobZIP">
+
+        </fieldset>
+
+        <br><br>
+
+        <fieldset>
+            <legend>Job Information</legend>
+
+            <label for="requestDate">Desired Project Start Date:</label>
+            <input type="date">
+
+            <br><br>
+
+            <input type="radio" name="jobType" id="jobChoice1" value="shed">
+            <label for="jobChoice1">Shed, Carport, or other outbuilding</label>
+
+            <input type="radio" name="jobType" id="jobChoice2" value="deck">
+            <label for="jobChoice2">Deck</label>
+
+            <input type="radio" name="jobType" id="jobChoice3" value="ramp">
+            <label for="jobChoice3">Access Ramp</label>
+
+            <br><br>
+
+            <label for="jobDetails">Work Details (dimensions, materials, manhours, etc.):</label>
+            <br>
+            <textarea name="" id="jobDetails" cols="50" rows="20"></textarea>
+
+            <br><br>
+
+            <label for="jobPhoto">Upload a photo of job site:</label>
+            <input type="file" accept="image/png, image/jpeg">
+
+        </fieldset>
+
+        <br><br>
+        <button>Submit New Customer Record</button>
+    </form>
+</body>
+</html>

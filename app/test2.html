@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>Anonymous Builders: Jobs and Updates</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <!--     Fonts and icons     -->
+      <link rel="stylesheet" type="text/css"
+         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+      <!-- Material Kit CSS -->
+      <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+      <link href="assets/css/buttons.css" rel="stylesheet">
+   </head>
+   <body class="dark-edition">
+      <div class="wrapper ">
+         <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-2.jpg">
+            <!--
+               Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+               
+               Tip 2: you can also add an image using data-image tag -->
+            <div class="logo">
+               <p class="simple-text logo-normal">
+                  Anonymous Builders
+               </p>
+            </div>
+            <div class="sidebar-wrapper">
+               <ul class="nav">
+                  <li class="nav-item   ">
+                     <a class="nav-link" href="index.html">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                     </a>
+                  </li>
+                  <!-- your sidebar here -->
+                  <li class="nav-item">
+                     <a class="nav-link" href="createclient.html">
+                        <i class="material-icons">contact_page</i>
+                        <p>Create New Client</p>
+                     </a>
+                  </li>
+                  <li class="nav-item active">
+                     <a class="nav-link" href="javascript:void(0)">
+                        <i class="material-icons">construction</i>
+                        <p>Create New Job</p>
+                        <p>& Update Records</p>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+               <div class="container-fluid">
+                  <div class="navbar-wrapper">
+                     <a class="navbar-brand" href="javascript:void(0)">Create New Jobs & Update Records</a>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+                     aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  <span class="navbar-toggler-icon icon-bar"></span>
+                  </button>
+               </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+               <div class="container-fluid">
+                  <fieldset>
+                     <legend>Search For Client</legend>
+                     <label for="searchLastName" class="titass">Last Name:</label>
+                     <input type="text" id="searchLastName">
+                     <button id="findClient" onclick="ABApp.findClient();">Find Client</button>
+                  </fieldset>
+               </div>
+               <br><br>
+               <fieldset class="container-fluid" id="foundClients" style="display: none;">
+                  <legend>Found Clients</legend>
+               </fieldset>
+               <div class="table-responsive">
+                  <fieldset class="container-fluid" id="selectedClient">
+                     <legend>Client Record</legend>
+                     <table class="table first">
+                       <thead>
+                        <tr>
+                           <th>ID</th>
+                           <th>First Name</th>
+                           <th>Last Name</th>
+                           <th>Phone #</th>
+                           <th>Email</th>
+                       </tr>
+                       </thead>
+                        <tbody>
+                           <tr>
+                             <td>
+                              <br>
+                              <input type="text" id="clientID" readonly>
+                           </td>
+                           <td>
+                            <br>
+                              <input type="text" id="firstName">
+                           </td>
+                           <td>
+                            <br>
+                              <input type="text" id="lastName">
+                           </td>
+                            <td>
+                            <br>
+                              <input type="text" id="custPhone">
+                           </td>
+                            <td>
+                             <br>
+                              <input type="text" id="custEmail">
+                           </td>
+                          </tr>
+                        </tbody>
+                     </table>
+                     <table class="table second">
+                       <thead>
+                        <tr>
+                          <th>Street</th>
+                          <th>APT</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>ZIP</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                        <td>
+                          <br>
+                          <input type="text" id="custStreet">
+                       </td>
+                       <td>
+                        <br>
+                          <input type="text" id="custApt">
+                       </td>
+                       <td>
+                        <br>
+                          <input type="text" id="custCity">
+                       </td>
+                       <td>
+                        <br>
+                          <select id="custState">
+                             <option value="AL">Alabama</option>
+                             <option value="AK">Alaska</option>
+                             <option value="AZ">Arizona</option>
+                             <option value="AR">Arkansas</option>
+                             <option value="CA">California</option>
+                             <option value="CO">Colorado</option>
+                             <option value="CT">Connecticut</option>
+                             <option value="DE">Delaware</option>
+                             <option value="DC">District Of Columbia</option>
+                             <option value="FL">Florida</option>
+                             <option value="GA">Georgia</option>
+                             <option value="HI">Hawaii</option>
+                             <option value="ID">Idaho</option>
+                             <option value="IL">Illinois</option>
+                             <option value="IN">Indiana</option>
+                             <option value="IA">Iowa</option>
+                             <option value="KS">Kansas</option>
+                             <option value="KY">Kentucky</option>
+                             <option value="LA">Louisiana</option>
+                             <option value="ME">Maine</option>
+                             <option value="MD">Maryland</option>
+                             <option value="MA">Massachusetts</option>
+                             <option value="MI">Michigan</option>
+                             <option value="MN">Minnesota</option>
+                             <option value="MS">Mississippi</option>
+                             <option value="MO">Missouri</option>
+                             <option value="MT">Montana</option>
+                             <option value="NE">Nebraska</option>
+                             <option value="NV">Nevada</option>
+                             <option value="NH">New Hampshire</option>
+                             <option value="NJ">New Jersey</option>
+                             <option value="NM">New Mexico</option>
+                             <option value="NY">New York</option>
+                             <option value="NC">North Carolina</option>
+                             <option value="ND">North Dakota</option>
+                             <option value="OH">Ohio</option>
+                             <option value="OK">Oklahoma</option>
+                             <option value="OR">Oregon</option>
+                             <option value="PA">Pennsylvania</option>
+                             <option value="RI">Rhode Island</option>
+                             <option value="SC">South Carolina</option>
+                             <option value="SD">South Dakota</option>
+                             <option value="TN">Tennessee</option>
+                             <option value="TX">Texas</option>
+                             <option value="UT">Utah</option>
+                             <option value="VT">Vermont</option>
+                             <option value="VA">Virginia</option>
+                             <option value="WA">Washington</option>
+                             <option value="WV">West Virginia</option>
+                             <option value="WI">Wisconsin</option>
+                             <option value="WY">Wyoming</option>
+                          </select>
+                       </td>
+                       <td>
+                        <br>
+                          <input type="text" id="custZIP">
+                       </td>
+                       </tbody>
+                     </table>
+                    </fieldset>
+                </div>
+
+                <button id="myBtn" onclick="displayModal('testing modal messages');">Open Modal</button>
+
+                <div id ="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p id="ttt">Lorem Ipsum</p>
+                  </div>
+                </div>
+
+
+               <div class="multi-button">
+                  <input name="buttons" type="checkbox" id="updateClient" onclick="alert('test'); ABApp.updateClientInfo()">
+                  <label for="updateClient">
+                    <i class="material-icons">done</i>
+                     Save Client Changes
+                  </label>
+                  <input name="buttons" type="checkbox" id="findJobs" onclick="ABApp.findJobs()">
+                  <label for="findJobs">
+                    <i class="material-icons">search</i>
+                     Find All Jobs For this Client
+                  </label>
+                  <input name="buttons" type="checkbox" id="createJob" onclick="ABApp.showJobForm()">
+                  <label for="createJob">
+                    <i class="material-icons">build</i>
+                     Create New Job for this Client
+                  </label>
+                  <input name="buttons" type="checkbox" id="deleteClient" onclick="ABApp.deleteClient()">
+                  <label for="deleteClient">
+                    <i class="material-icons">delete_forever</i>
+                     Delete Client
+                  </label>
+               </div>
+               <fieldset class="container-fluid" id="jobAddress" style="display: none;">
+                  <legend>Job Site Address</legend>
+                  <!-- <label for="sameAddress">Check if same as above</label>
+                     <input type="checkbox" id="sameAddress"> -->
+                  <label for="jobStreet">Street:</label>
+                  <input type="text" id="jobStreet">
+                  <label for="jobCity">City:</label>
+                  <input type="text" id="jobCity">
+                  <br><br>
+                  <label for="jobState">State:</label>
+                  <select id="jobState">
+                     <option value="AL">Alabama</option>
+                     <option value="AK">Alaska</option>
+                     <option value="AZ">Arizona</option>
+                     <option value="AR">Arkansas</option>
+                     <option value="CA">California</option>
+                     <option value="CO">Colorado</option>
+                     <option value="CT">Connecticut</option>
+                     <option value="DE">Delaware</option>
+                     <option value="DC">District Of Columbia</option>
+                     <option value="FL">Florida</option>
+                     <option value="GA">Georgia</option>
+                     <option value="HI">Hawaii</option>
+                     <option value="ID">Idaho</option>
+                     <option value="IL">Illinois</option>
+                     <option value="IN">Indiana</option>
+                     <option value="IA">Iowa</option>
+                     <option value="KS">Kansas</option>
+                     <option value="KY">Kentucky</option>
+                     <option value="LA">Louisiana</option>
+                     <option value="ME">Maine</option>
+                     <option value="MD">Maryland</option>
+                     <option value="MA">Massachusetts</option>
+                     <option value="MI">Michigan</option>
+                     <option value="MN">Minnesota</option>
+                     <option value="MS">Mississippi</option>
+                     <option value="MO">Missouri</option>
+                     <option value="MT">Montana</option>
+                     <option value="NE">Nebraska</option>
+                     <option value="NV">Nevada</option>
+                     <option value="NH">New Hampshire</option>
+                     <option value="NJ">New Jersey</option>
+                     <option value="NM">New Mexico</option>
+                     <option value="NY">New York</option>
+                     <option value="NC">North Carolina</option>
+                     <option value="ND">North Dakota</option>
+                     <option value="OH">Ohio</option>
+                     <option value="OK">Oklahoma</option>
+                     <option value="OR">Oregon</option>
+                     <option value="PA">Pennsylvania</option>
+                     <option value="RI">Rhode Island</option>
+                     <option value="SC">South Carolina</option>
+                     <option value="SD">South Dakota</option>
+                     <option value="TN">Tennessee</option>
+                     <option value="TX">Texas</option>
+                     <option value="UT">Utah</option>
+                     <option value="VT">Vermont</option>
+                     <option value="VA">Virginia</option>
+                     <option value="WA">Washington</option>
+                     <option value="WV">West Virginia</option>
+                     <option value="WI">Wisconsin</option>
+                     <option value="WY">Wyoming</option>
+                  </select>
+                  <label for="jobZIP">ZIP:</label>
+                  <input type="text" id="jobZIP">
+               </fieldset>
+               <br><br>
+               <fieldset class="container-fluid" id="jobInfo" style="display: none;">
+                  <legend>Job Information</legend>
+                  <label for="jobID">Job ID#:</label>
+                  <input type="text" id="jobID" value="New" readonly>
+                  <label for="requestDate">Desired Project Start Date:</label>
+                  <input id="requestDate" type="date">
+                  <br><br>
+                  <input type="radio" name="jobType" id="jobChoice1" value="outbuilding">
+                  <label for="jobChoice1">Shed, Carport, or other Outbuilding</label>
+                  <input type="radio" name="jobType" id="jobChoice2" value="deck">
+                  <label for="jobChoice2">Deck</label>
+                  <input type="radio" name="jobType" id="jobChoice3" value="ramp">
+                  <label for="jobChoice3">Access Ramp</label>
+                  <br><br>
+                  <label for="jobDetails">Work Details (dimensions, materials, manhours, etc.):</label>
+                  <br>
+                  <textarea id="jobDetails" cols="50" rows="20"></textarea>
+                  <br><br>
+                  <button id="saveJob" onclick="ABApp.saveJob()">Save Job</button>
+               </fieldset>
+               <div class="container-fluid" id="foundJobs" style="display: none;">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+                           <div class="card-body">
+                              <div class="table-responsive">
+                                 <table class="table">
+                                    <thead class=" text-primary">
+                                       <tr>
+                                          <th>Ed/Del</th>
+                                          <th>JobID</th>
+                                          <th>Street</th>
+                                          <th>City</th>
+                                          <th>State</th>
+                                          <th>ZIP</th>
+                                          <th>Requested Date</th>
+                                          <th>Type</th>
+                                          <th>Details</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody id="jobsTableBody"></tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <footer class="footer">
+               <div class="container-fluid">
+                  <div class="copyright float-right">
+                     <p>
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script> Anonymous Builders, Inc.
+                     </p>
+                  </div>
+                  <!-- your footer here -->
+               </div>
+            </footer>
+         </div>
+      </div>
+      <!--AWS Files and main site logic
+         <script src="scripts/amazon-cognito-identity.min.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+         <script src="scripts/apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+         <script src="scripts/apiGateway-js-sdk/apigClient.js"></script>
+         <script src="scripts/config.js"></script>
+         <script src="scripts/site.js"></script>
+         -->
+         <script src="scripts/findclient.js"></script>
+      <!--   Core JS Files   -->
+      <script src="./assets/js/core/jquery.min.js"></script>
+      <script src="./assets/js/core/popper.min.js"></script>
+      <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
+      <script src="https://unpkg.com/default-passive-events"></script>
+      <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+      <!-- Place this tag in your head or just before your close body tag. -->
+      <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
+      <!-- Chartist JS -->
+      <script src="./assets/js/plugins/chartist.min.js"></script>
+      <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+      <script src="./assets/js/material-dashboard.js?v=2.1.0"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+           $().ready(function () {
+         
+             ABApp.checkLogin(false, true);  // nerf this
+         
+             $sidebar = $('.sidebar');
+         
+             $sidebar_img_container = $sidebar.find('.sidebar-background');
+         
+             $full_page = $('.full-page');
+         
+             $sidebar_responsive = $('body > .navbar-collapse');
+         
+             window_width = $(window).width();
+         
+             $('.fixed-plugin a').click(function (event) {
+               // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+               if ($(this).hasClass('switch-trigger')) {
+                 if (event.stopPropagation) {
+                   event.stopPropagation();
+                 } else if (window.event) {
+                   window.event.cancelBubble = true;
+                 }
+               }
+             });
+         
+             $('.fixed-plugin .active-color span').click(function () {
+               $full_page_background = $('.full-page-background');
+         
+               $(this).siblings().removeClass('active');
+               $(this).addClass('active');
+         
+               var new_color = $(this).data('color');
+         
+               if ($sidebar.length != 0) {
+                 $sidebar.attr('data-color', new_color);
+               }
+         
+               if ($full_page.length != 0) {
+                 $full_page.attr('filter-color', new_color);
+               }
+         
+               if ($sidebar_responsive.length != 0) {
+                 $sidebar_responsive.attr('data-color', new_color);
+               }
+             });
+         
+             $('.fixed-plugin .background-color .badge').click(function () {
+               $(this).siblings().removeClass('active');
+               $(this).addClass('active');
+         
+               var new_color = $(this).data('background-color');
+         
+               if ($sidebar.length != 0) {
+                 $sidebar.attr('data-background-color', new_color);
+               }
+             });
+         
+             $('.fixed-plugin .img-holder').click(function () {
+               $full_page_background = $('.full-page-background');
+         
+               $(this).parent('li').siblings().removeClass('active');
+               $(this).parent('li').addClass('active');
+         
+         
+               var new_image = $(this).find("img").attr('src');
+         
+               if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                 $sidebar_img_container.fadeOut('fast', function () {
+                   $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                   $sidebar_img_container.fadeIn('fast');
+                 });
+               }
+         
+               if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+         
+                 $full_page_background.fadeOut('fast', function () {
+                   $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                   $full_page_background.fadeIn('fast');
+                 });
+               }
+         
+               if ($('.switch-sidebar-image input:checked').length == 0) {
+                 var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+         
+                 $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                 $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+               }
+         
+               if ($sidebar_responsive.length != 0) {
+                 $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+               }
+             });
+         
+             $('.switch-sidebar-image input').change(function () {
+               $full_page_background = $('.full-page-background');
+         
+               $input = $(this);
+         
+               if ($input.is(':checked')) {
+                 if ($sidebar_img_container.length != 0) {
+                   $sidebar_img_container.fadeIn('fast');
+                   $sidebar.attr('data-image', '#');
+                 }
+         
+                 if ($full_page_background.length != 0) {
+                   $full_page_background.fadeIn('fast');
+                   $full_page.attr('data-image', '#');
+                 }
+         
+                 background_image = true;
+               } else {
+                 if ($sidebar_img_container.length != 0) {
+                   $sidebar.removeAttr('data-image');
+                   $sidebar_img_container.fadeOut('fast');
+                 }
+         
+                 if ($full_page_background.length != 0) {
+                   $full_page.removeAttr('data-image', '#');
+                   $full_page_background.fadeOut('fast');
+                 }
+         
+                 background_image = false;
+               }
+             });
+         
+             $('.switch-sidebar-mini input').change(function () {
+               $body = $('body');
+         
+               $input = $(this);
+         
+               if (md.misc.sidebar_mini_active == true) {
+                 $('body').removeClass('sidebar-mini');
+                 md.misc.sidebar_mini_active = false;
+         
+                 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+         
+               } else {
+         
+                 $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+         
+                 setTimeout(function () {
+                   $('body').addClass('sidebar-mini');
+         
+                   md.misc.sidebar_mini_active = true;
+                 }, 300);
+               }
+         
+               // we simulate the window Resize so the charts will get updated in realtime.
+               var simulateWindowResize = setInterval(function () {
+                 window.dispatchEvent(new Event('resize'));
+               }, 180);
+         
+               // we stop the simulation of Window Resize after the animations are completed
+               setTimeout(function () {
+                 clearInterval(simulateWindowResize);
+               }, 1000);
+         
+             });
+           });
+         });
+      </script>
+      <!-- Place this tag in your head or just before your close body tag. -->
+      <script async defer src="https://buttons.github.io/buttons.js"></script>
+   </body>
+</html>

@@ -8,7 +8,4 @@ See documentation directory for further details about user requirements and plan
 
 
 
-# Website Icon Fonst List
-<i class="material-icons">contact_page</i>
-replace "contact_page" with what ever icon name you want to use
 https://fonts.google.com/icons

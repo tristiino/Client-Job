@@ -1,0 +1,28 @@
+ <div class="container-fluid" id="foundJobs">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <tr>
+                          <th>Ed/Del</th>
+                          <th>JobID</th>
+                          <th>Street</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>ZIP</th>
+                          <th>Requested Date</th>
+                          <th>Type</th>
+                          <th>Details</th>
+                        </tr>
+                      </thead>
+                      <tbody id="jobsTableBody"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

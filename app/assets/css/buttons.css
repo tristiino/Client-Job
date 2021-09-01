@@ -1,0 +1,90 @@
+/* Contains styling related to the checkbox, text-style "buttons" */
+
+* {
+    --primary-1: 230, 15%, 22%; /* Neutral */
+    --primary-2: 230, 15%, 20%; /* Dark */
+    --primary-3: 230, 15%, 18%; /* Darker */
+    --primary-4: 230, 15%, 45%; /* Lightest */
+    --secondary: 166, 69%, 81%; /* Splash of Color */
+    --transition: cubic-bezier(0.77, 0, 0.175, 1); 
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  
+  .multi-button {
+    --shadow: 286, 24%, 14%;
+    position: relative;
+    padding: .2rem;
+    box-shadow: 
+      1px 1px 1px hsla(var(--shadow),.12),
+      3px 3px 3px hsla(var(--shadow),.11), 
+      5px 5px 5px hsla(var(--shadow),.1),
+      7px 7px 7px hsla(var(--shadow),.09),
+      11px 11px 11px hsla(var(--shadow),.08),
+      13px 13px 13px hsla(var(--shadow),.07),
+      17px 17px 17px hsla(var(--shadow),.06),
+      19px 19px 19px hsla(var(--shadow),.05),
+      23px 23px 23px hsla(var(--shadow),.04),
+      29px 29px 29px hsla(var(--shadow),.03);
+    border-radius: 4px;
+    user-select: none;
+  }
+  
+  .button-label {
+    background-color: #1c1a1a8c;
+  }
+
+  .warning-button-label {
+    background-color: #bf37378c;
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding: .8rem 1.4rem; 
+    color: #5C617B;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: none;
+    border-radius: 2px;
+    background: none;
+    transition: all .4s var(--transition); 
+    cursor: pointer;
+  }
+  
+  span {
+    margin-right: .1rem;
+  }
+  
+  span svg {
+    height: 16px;
+    width: 16px;
+  }
+  
+  label:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    top: 20%;
+    left: 50%;
+    background: hsla(var(--secondary),.35);
+    border-radius: 2px;  
+    transition: all .25s var(--transition);
+  }
+  
+  label:hover:before {
+    width: 80%;
+    left: 10%;
+    border-top: 1px solid hsl(var(--secondary));
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
